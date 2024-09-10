@@ -1,5 +1,4 @@
 # Group-Python
-#This is supposed to be the website for Group  UNKOWN for Data 1
-#hi
+This is our webpage containing the Python-code for the Homework 1 assignments.
 
-print("Hi")
+Siem van Staveren ()
