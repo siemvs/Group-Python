@@ -1,5 +1,5 @@
 # Group Python
-This is our webpage containing the Python-code for the Homework 1 assignments.
+This is our webpage containing the Python-code for the assignments.
 
 Siem van Staveren (1583115)
 Eva Heslenfeld (1567063)
