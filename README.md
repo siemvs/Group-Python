@@ -12,7 +12,7 @@ due September 10, 2024
 
 ## Homework 1
 due September 17, 2024
-<iframe src="https://nbviewer.org/github/siemvs/Group-Python/blob/main/hw-01.ipynb" width="800" height="600"></iframe>
+<iframe src="https://nbviewer.org/github/siemvs/Group-Python/blob/main/hw-01.ipynb" width="1200" height="600"></iframe>
 
 
 
