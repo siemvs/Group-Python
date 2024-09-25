@@ -20,3 +20,4 @@ due September 24, 2024
 
 ## Homework 3
 due oktober 1, 2024
+<iframe src="https://nbviewer.org/github/siemvs/Group-Python/blob/main/hw-04.ipynb" width="1200" height="600"></iframe>
