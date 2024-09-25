@@ -16,5 +16,7 @@ due September 17, 2024
 
 ## Homework 2
 due September 24, 2024
-<iframe src="https://github.com/siemvs/Group-Python/blob/421aba27b9714279e1f1b20eeb9d216af932d5bd/Assignment%203Done.ipynb" width="1200" height="600"></if
+<iframe src="https://nbviewer.org/github/siemvs/Group-Python/blob/421aba27b9714279e1f1b20eeb9d216af932d5bd/Assignment%203Done.ipynb" width="1200" height="600"></if
 
+## Homework 3
+due oktober 1, 2024
