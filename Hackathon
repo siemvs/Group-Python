@@ -125,3 +125,47 @@ plt.ylabel("living space (% 100+ m2)")
 
 # Show the scatterplot
 plt.show()
+
+import pandas as pd
+import geopandas as gpd
+from shapely import wkt
+import matplotlib.pyplot as plt
+
+csv_file = 'data/Geometrywijks.csv'  
+df = pd.read_csv(csv_file)
+df
+null_counts = df.isnull().sum()
+print(null_counts)
+df = df.dropna(subset=['geometry'])
+
+# Converting the geometry column to a GeoDataFrame
+df['geometry'] = df['geometry'].astype(str)
+df['geometry'] = df['geometry'].apply(wkt.loads)  
+# Converting WKT to geometries
+gdf = gpd.GeoDataFrame(df, geometry='geometry')
+# Renaming the wijkcode to match the Area code label from the variables-dataset
+gdf = gdf.rename(columns={'Wijkcode': 'Area code'})
+# Removing the "" around the Area code in the gdf-dataset
+gdf['Area code'] = gdf['Area code'].str.strip().str.replace('"', '', regex=False)
+# Merging the geo-dataset to the variables-dataset
+gdf = gdf.merge(merge_dataframe, on='Area code', how='left')
+gdf
+# Set the coordinate reference system (CRS)
+gdf.set_crs(epsg=4326, inplace=True)
+# Plotting the GeoDataFrame with the specified variable
+fig, ax = plt.subplots(figsize=(10, 10))
+
+# Using the 'Living space: % 100 m2+' variable for color mapping
+gdf.plot(column='Living space: % 100 m2+', ax=ax, legend=True,
+         cmap='OrRd', edgecolor='black',
+         legend_kwds={'label': "Living Space of 100+ m2 (%)",
+                      'orientation': "horizontal"})
+
+# Set title
+plt.title('Map of % dwellings with living space of 100+ m2')
+# Save the map to show in presentation
+plt.savefig('living_space_map.jpeg', format='jpeg', dpi=300, bbox_inches='tight')
+# Show the plot
+plt.show()
+# The map shows hotspot of neighbourhoods with higher shares of big living spaces, particularly in the Oud-Zuid district (probably due to higher income there) and the outer/rural areas of the city (probably due to more space per person there)
+# The more dense areas like Oud-West, Slotermeer and Oost show lower shares of these type of dwellings, due to higher building density (which results in smaller apartments) and lower incomes
