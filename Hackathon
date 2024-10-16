@@ -39,3 +39,16 @@ par_selected = par[['Area code', 'Health care facilities per 1.000 residents']]
 
 # Display the DataFrame with only the selected columns
 print(par_selected.head())
+
+
+
+#merging all of the different columns together
+
+merge_h_s= pd.merge(h_selected, s_selected, on='Area code', how='inner')
+merge_h_s
+
+merge_pop_par= pd.merge(pop_selected, par_selected, on='Area code', how='inner')
+merge_pop_par
+
+merge_dataframe= pd.merge(merge_h_s, merge_pop_par, on='Area code', how='inner')
+merge_dataframe
