@@ -26,3 +26,16 @@ h_selected = h[['Area code', 'Living space: % 100 m2+', 'Average number of resid
 
 # Display the DataFrame with only the selected columns
 print(h_selected.head())
+
+
+# Select specific columns by their names in the Population file
+pop_selected = pop[['Area code', 'Migration background: % none', 'Migration background: % European (excl the Netherlands)','Households: % with children','Duration  of residence']]
+
+# Display the DataFrame with only the selected columns
+print(pop_selected.head())
+
+# Select specific columns by their names in the Social Infrastructure file
+par_selected = par[['Area code', 'Health care facilities per 1.000 residents']]
+
+# Display the DataFrame with only the selected columns
+print(par_selected.head())
