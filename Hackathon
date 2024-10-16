@@ -104,3 +104,4 @@ dfcor = dfcor.apply(pd.to_numeric, errors='coerce')
 correlation_table = dfcor.corr()
 # Display the correlation table
 print(correlation_table)
+correlation_table.to_excel('correlation_table.xlsx', sheet_name='Correlation', index=True)
