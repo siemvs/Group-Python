@@ -6,3 +6,15 @@ df = pd.read_excel('C:/Users/cayap/Downloads/HackathonData/Housing.xlsx')
 
 # Display the first few rows of the dataframe
 print(df.head())
+
+h = 'data/Housing.xlsx'
+pd.read_excel(h)
+
+ses = 'data/Socio-economic status.xlsx'
+pd.read_excel(ses)
+
+pop = 'data/Population.xlsx'
+pd.read_excel(pop)
+
+soin = 'data/Participation.xlsx'
+pd.read_excel(soin)
