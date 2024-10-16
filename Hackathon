@@ -65,3 +65,12 @@ merge_dataframe['Area code'] = merge_dataframe['Area code'].fillna("NA")
 null_counts = merge_dataframe.isnull().sum()
 print(null_counts)
 # Check if missing value for NA disappeared
+
+
+# Example: Histogram of households with children
+plt.figure(figsize=(10, 6))
+sns.histplot(merge_dataframe['Households: % with children'], bins=20, kde=True)
+plt.title('Distribution of Households with Children')
+plt.xlabel('Number of Households with Children')
+plt.ylabel('Frequency')
+plt.show()
