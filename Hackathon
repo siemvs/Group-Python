@@ -105,3 +105,23 @@ correlation_table = dfcor.corr()
 # Display the correlation table
 print(correlation_table)
 correlation_table.to_excel('correlation_table.xlsx', sheet_name='Correlation', index=True)
+
+##Scatterplot 
+# extract the data for x and y
+x = merge_dataframe['Households: % with children']  
+y = merge_dataframe['Living space: % 100 m2+']  
+
+# Make the scatterplot
+plt.scatter(x, y)
+
+# Plot the trendline
+m, b = np.polyfit(x, y, 1)
+plt.plot(x, m*x + b, color='red', label=f'Trendline: y = {m:.2f}x + {b:.2f}')
+
+# Add a title and labels to the plot
+plt.title("Plot of households with children and living space")
+plt.xlabel("households with children (%)")
+plt.ylabel("living space (% 100+ m2)")
+
+# Show the scatterplot
+plt.show()
