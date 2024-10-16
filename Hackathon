@@ -74,3 +74,23 @@ plt.title('Distribution of Households with Children')
 plt.xlabel('Number of Households with Children')
 plt.ylabel('Frequency')
 plt.show()
+
+
+# Linear Regression Analysis (to explore relationships)
+import statsmodels.api as sm
+
+#select the independent variables
+X = merge_dataframe[['Average number of residents', 'SES high (%)', 
+           'Migration background: % none', 'Migration background: % European (excl the Netherlands)', 
+           'Households: % with children', 'Health care facilities per 1.000 residents']]
+#select the dependent variables
+y = merge_dataframe['Living space: % 100 m2+']
+
+# Add a constant for intercept
+X = sm.add_constant(X)
+
+# Fit the model
+model = sm.OLS(y, X).fit()
+
+# Print the regression results
+print(model.summary())
