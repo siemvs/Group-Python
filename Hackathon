@@ -169,3 +169,16 @@ plt.savefig('living_space_map.jpeg', format='jpeg', dpi=300, bbox_inches='tight'
 plt.show()
 # The map shows hotspot of neighbourhoods with higher shares of big living spaces, particularly in the Oud-Zuid district (probably due to higher income there) and the outer/rural areas of the city (probably due to more space per person there)
 # The more dense areas like Oud-West, Slotermeer and Oost show lower shares of these type of dwellings, due to higher building density (which results in smaller apartments) and lower incomes
+
+# Using the 'Households: % with children' variable for color mapping
+gdf.plot(column='Households: % with children', ax=ax, legend=True,
+         cmap='OrRd', edgecolor='black',
+         legend_kwds={'label': "Households: % with children",
+                      'orientation': "horizontal"})
+# Set title
+plt.title('Map of Households: % with children')
+# Save the map to show in presentation
+plt.savefig('children.jpeg', format='jpeg', dpi=300, bbox_inches='tight')
+# Show the plot
+plt.show()
+# The disribution of the share of households with children per neighbourhood shows a lot of families live in the outer suburbs of the city, which makes sense due to lifestyle choices, bigger houses and lower housing prices. Due to the absense of this in the central part of the city, there is a lower share of households with children there. 
