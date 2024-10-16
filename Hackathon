@@ -94,3 +94,13 @@ model = sm.OLS(y, X).fit()
 
 # Print the regression results
 print(model.summary())
+
+dfcor = pd.DataFrame(merge_dataframe)
+dfcor = dfcor.drop(columns=['Area code'])
+print(dfcor.dtypes)
+dfcor.replace('-', np.nan, inplace=True)
+dfcor = dfcor.apply(pd.to_numeric, errors='coerce')
+
+correlation_table = dfcor.corr()
+# Display the correlation table
+print(correlation_table)
