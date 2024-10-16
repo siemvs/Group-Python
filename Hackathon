@@ -52,3 +52,16 @@ merge_pop_par
 
 merge_dataframe= pd.merge(merge_h_s, merge_pop_par, on='Area code', how='inner')
 merge_dataframe
+
+null_counts = merge_dataframe.isnull().sum()
+print(null_counts)
+#One missing value in column Area code, problem is it reads the Area code NA as a missing value (NaN)
+# Display rows where 'Area code' is missing
+missing_area_code_rows = merge_dataframe[merge_dataframe['Area code'].isna()]
+# Show the result
+print(missing_area_code_rows)
+# Replace missing values in 'Area code' with the string "NA"
+merge_dataframe['Area code'] = merge_dataframe['Area code'].fillna("NA")
+null_counts = merge_dataframe.isnull().sum()
+print(null_counts)
+# Check if missing value for NA disappeared
