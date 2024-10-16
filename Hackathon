@@ -18,3 +18,11 @@ pd.read_excel(pop)
 
 soin = 'data/Participation.xlsx'
 pd.read_excel(soin)
+
+
+#Template for excel file column selection
+# Select specific columns by their names
+h_selected = h[['Area code', 'Living space: % 100 m2+', 'Average number of residents']]
+
+# Display the DataFrame with only the selected columns
+print(h_selected.head())
